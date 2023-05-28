@@ -1,0 +1,245 @@
+# Refresh
+# https://codeberg.org/sjsepan/sjsepan.pastel-powerline
+#eval "$(starship init bash)"
+
+# 🚀🎯✘⇡⇣⇕⎈☸🐫▶ﰉ↯喝•ﯣ🗑👅🏳😰😵🥺😂🍒🏃‍♂️🔋⚡🕙🗓🍺➜☁️🅰💀⛵🔒🐋🙃🤖🌊🐍😬👍👋🔥💥🌍🦀🅢📦
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](fg:#33658A)\
+[](fg:#06969A bg:#33658A)\
+[](fg:#86BBD8 bg:#06969A)\
+[($status)](bg:#86BBD8)\
+[$character](bg:#86BBD8)\
+[](fg:#86BBD8)\
+[](#86BBD8)\
+$username\
+[](fg:#86BBD8 bg:#D8BB86)\
+$directory\
+[](fg:#D8BB86 bg:#FCA17D)\
+$git_branch\
+$git_status\
+[](fg:#FCA17D bg:#86BBD8)\
+$c\
+$dotnet\
+$elixir\
+$elm\
+$golang\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+[](fg:#86BBD8 bg:#06969A)\
+$docker_context\
+[](fg:#06969A bg:#33658A)\
+$time\
+[ ](fg:#33658A)\
+"""
+
+# A continuation prompt that displays right half-circle and filled-in arrow
+continuation_prompt = "[ ](bg:#33658A)[](fg:#33658A)"
+
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[](fg:green bg:#86BBD8)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[✘](fg:red bg:#86BBD8)"
+
+# # Disable the package module, hiding it from the prompt completely
+# [package]
+# disabled = true
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:#86BBD8 fg:#000000"
+style_root = "bold bg:#86BBD8 fg:#000000"
+format = '[ ($user) ]($style)'
+ 
+[directory]
+style = "bg:#D8BB86 fg:#000000"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+ 
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[aws]
+symbol = "  "
+style = "bg:#06969A"
+format = '[[ $symbol $context ](bg:#06969A)]($style) $path'
+
+[buf]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[c]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[conda]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[dart]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[docker_context]
+symbol = "🐳 "
+style = "bg:#06969A"
+format = '[[ $symbol $context ](bg:#06969A)]($style) $path'
+ 
+[dotnet] 
+symbol = " "
+style = "fg:#000000 bg:#86BBD8" 
+format = '[$symbol ](bold fg:#33658A bg:#86BBD8)[$version ]($style)' 
+
+[elixir]
+symbol = "💧 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[elm]
+symbol = "🌳 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[git_branch]
+symbol = "☊"
+style = "bg:#FCA17D"
+format = '[[ $symbol $branch ](fg:#000000 bg:#FCA17D)]($style)'
+ 
+[git_status]
+style = "bg:#FCA17D"
+format = '[[($all_status$ahead_behind )](fg:#000000 bg:#FCA17D)]($style)'
+ahead = "⇡ $count "
+behind = "⇣ $count "
+deleted = "🗑 $count "
+diverged = " $count "
+stashed = "📦 $count "
+modified = "פֿ $count "
+staged = '[ $count ](green)'
+renamed = " $count "
+untracked = "🤷 ‍$count "
+
+[golang]
+symbol = "🐹 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[haskell]
+symbol = "λ "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[hg_branch]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[java]
+symbol = "☕ "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[julia]
+symbol = "ஃ "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[lua]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[memory_usage]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[meson]
+symbol = "喝 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[nim]
+symbol = "👑 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[nix_shell]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[nodejs]
+symbol = "🔷 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[package]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[python]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[rlang]
+symbol = "ﳒ "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[ruby]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[rust]
+symbol = "🦀"
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[scala]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+
+[spack]
+symbol = "🅢 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format # %T for seconds
+style = "bg:#33658A"
+format = '[[  $time ](bg:#33658A)]($style)'
+
+[status]
+disabled = false
+format = '[\[$status:$common_meaning\] ](fg:red bg:#86BBD8)'
