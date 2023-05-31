@@ -1,8 +1,15 @@
+## download ISO
+https://www.debian.org/CD/http-ftp/
+
 ## add user to sudoers
 ### run as root, log off and log on as user
 ```
 usermod -aG sudo steve
 ```
+
+## sources.list generator
+https://debgen.xyz/
+
 
 ## update the apt repositories
 ```
