@@ -1,6 +1,7 @@
 https://www.nerdfonts.com/font-downloads
 
 Hack - best compatibility
+
 Ubuntu
 ---
 ### add fonts to shared folder or user folder ###
@@ -15,3 +16,16 @@ Copy TTF/OTF to that folder.
 ```
 fc-cache -v
 ```
+
+111
+
+222
+
+333
+
+---
+444
+---
+555
+
+666
