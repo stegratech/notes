@@ -1,3 +1,10 @@
+** download nerd fonts **
+---
+https://www.nerdfonts.com/font-downloads
+
+Hack - best compatibility
+
+>> break <<
 xxxx
 
 xxxx
