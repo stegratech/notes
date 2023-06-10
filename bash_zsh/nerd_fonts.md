@@ -18,3 +18,4 @@ Copy TTF/OTF to that folder.
 ```
 fc-cache -v
 ```
+ 
