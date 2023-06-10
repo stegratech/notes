@@ -12,7 +12,7 @@ Ubuntu
 
 /.local/share/fonts/font_name
 ```
-Copy TTF/OTF to that folder.
+Copy TTF/OTF to that folder
 ---
 **update the font cache**
 ```
