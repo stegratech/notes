@@ -44,4 +44,11 @@ sudo apt-get update
 sudo apt-get dist-upgrade -y
 sudo apt-get install htop ssh build-essential zip unzip p7zip vim tmux gdebi git wget curl -y
 ```
-
+## disable x on startup
+```
+systemctl set-default multi-user.target
+```
+## enable x on startup
+```
+systemctl set-default graphical.target
+```
